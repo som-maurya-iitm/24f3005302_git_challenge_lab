@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 
 from add import add
+from subtract import subtract
 
 
 def bold(text: str) -> str:
@@ -17,6 +18,7 @@ def greet() -> None:
     print("#", "*** Commands: ***", "#".rjust(12))
     print("#", f"\tQuit: {bold('q')}", "#".rjust(20))
     print("#", f"\tAdd: {bold('a')} x y", "#".rjust(17))
+    print("#", f"\tSubtract: {bold('s')} x y", "#".rjust(12))
     print("#" * 32)
 
 
@@ -33,6 +35,8 @@ def main() -> None:
             break
         elif user_input.startswith("a "):
             print(bold(str(add(*get_x_y(user_input)))))
+        elif user_input.startswith("s "):
+            print(bold(str(subtract(*get_x_y(user_input)))))
         else:
             print("Unknown Command!")
 
