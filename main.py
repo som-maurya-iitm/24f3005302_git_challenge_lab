@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 
 from add import add
+from multiply import multiply
 from subtract import subtract
 
 
@@ -19,6 +20,7 @@ def greet() -> None:
     print("#", f"\tQuit: {bold('q')}", "#".rjust(20))
     print("#", f"\tAdd: {bold('a')} x y", "#".rjust(17))
     print("#", f"\tSubtract: {bold('s')} x y", "#".rjust(12))
+    print("#", f"\tMultiply: {bold('m')} x y", "#".rjust(12))
     print("#" * 32)
 
 
@@ -37,6 +39,8 @@ def main() -> None:
             print(bold(str(add(*get_x_y(user_input)))))
         elif user_input.startswith("s "):
             print(bold(str(subtract(*get_x_y(user_input)))))
+        elif user_input.startswith("m "):
+            print(bold(str(multiply(*get_x_y(user_input)))))
         else:
             print("Unknown Command!")
 
