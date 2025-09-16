@@ -44,7 +44,11 @@ def main() -> None:
         elif user_input.startswith("m "):
             print(bold(str(multiply(*get_x_y(user_input)))))
         elif user_input.startswith("d "):
-            print(bold(str(divide(*get_x_y(user_input)))))
+            x, y = get_x_y(user_input)
+            if y == 0:
+                print("Cannot divide by zero")
+                continue
+            print(bold(str(divide(x, y))))
         else:
             print("Unknown Command!")
 
