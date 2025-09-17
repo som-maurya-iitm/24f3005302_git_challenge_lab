@@ -6,6 +6,7 @@ from add import add
 from divide import divide
 from multiply import multiply
 from subtract import subtract
+from sqaure import square
 
 
 def bold(text: str) -> str:
@@ -23,6 +24,7 @@ def greet() -> None:
     print("#", f"\tSubtract: {bold('s')} x y", "#".rjust(12))
     print("#", f"\tMultiply: {bold('m')} x y", "#".rjust(12))
     print("#", f"\tDivide: {bold('d')} x y", "#".rjust(14))
+    print("#", f"\tSquare: {bold('sqr')} x", "#".rjust(14))
     print("#" * 32)
 
 
@@ -49,6 +51,10 @@ def main() -> None:
                 print("Cannot divide by zero")
                 continue
             print(bold(str(divide(x, y))))
+        elif user_input.startswith("sqr "):
+            user_input += " 0"
+            x, _ = get_x_y(user_input)
+            print(bold(str(square(x))))
         else:
             print("Unknown Command!")
 
