@@ -9,6 +9,7 @@ from subtract import subtract
 from sqaure import square
 from square_root import sqr_root
 from power import power
+from cube_root import cube_root
 
 
 def bold(text: str) -> str:
@@ -29,6 +30,7 @@ def greet() -> None:
     print("#", f"\tSquare: {bold('sqr')} x", "#".rjust(14))
     print("#", f"\tSquare Root: {bold('sqrt')} x", "#".rjust(8))
     print("#", f"\tPower: {bold('p')} x y", "#".rjust(15))
+    print("#", f"\tCube Root: {bold('cbrt')} x", "#".rjust(10))
     print("#" * 32)
 
 
@@ -65,6 +67,10 @@ def main() -> None:
             print(bold(str(sqr_root(x))))
         elif user_input.startswith("p "):
             print(bold(str(power(*get_x_y(user_input)))))
+        elif user_input.startswith("cbrt "):
+            user_input += " 0"
+            x, _ = get_x_y(user_input)
+            print(bold(str(cube_root(x))))
         else:
             print("Unknown Command!")
 
