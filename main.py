@@ -7,6 +7,7 @@ from divide import divide
 from multiply import multiply
 from subtract import subtract
 from sqaure import square
+from square_root import sqr_root
 from power import power
 
 
@@ -26,6 +27,7 @@ def greet() -> None:
     print("#", f"\tMultiply: {bold('m')} x y", "#".rjust(12))
     print("#", f"\tDivide: {bold('d')} x y", "#".rjust(14))
     print("#", f"\tSquare: {bold('sqr')} x", "#".rjust(14))
+    print("#", f"\tSquare Root: {bold('sqrt')} x", "#".rjust(8))
     print("#", f"\tPower: {bold('p')} x y", "#".rjust(15))
     print("#" * 32)
 
@@ -57,6 +59,10 @@ def main() -> None:
             user_input += " 0"
             x, _ = get_x_y(user_input)
             print(bold(str(square(x))))
+        elif user_input.startswith("sqrt "):
+            user_input += " 0"
+            x, _ = get_x_y(user_input)
+            print(bold(str(sqr_root(x))))
         elif user_input.startswith("p "):
             print(bold(str(power(*get_x_y(user_input)))))
         else:
